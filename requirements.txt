@@ -1,0 +1,7 @@
+flask
+opencv-python
+pytesseract
+pillow
+numpy
+easyocr 
+torch
