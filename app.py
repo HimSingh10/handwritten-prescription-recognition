@@ -9,14 +9,14 @@ def main():
 
     # 🔹 Check if file exists
     if not os.path.exists(image_path):
-        print("❌ Error: Image file not found.")
+        print("Error: Image file not found.")
         return
 
     # 🔹 Preprocess image
     processed_image = preprocess_image(image_path)
 
     if processed_image is None:
-        print("❌ Error: Failed to load image.")
+        print("Error: Failed to load image.")
         return
 
     # 🔹 OCR extraction
@@ -27,7 +27,7 @@ def main():
         return
 
     print("\n" + "=" * 60)
-    print("📄 RAW EXTRACTED TEXT")
+    print("RAW EXTRACTED TEXT")
     print("=" * 60)
     print(text)
 
@@ -35,7 +35,7 @@ def main():
     structured_output = parse_medicines(text)
 
     print("\n" + "=" * 60)
-    print("💊 STRUCTURED OUTPUT")
+    print("STRUCTURED OUTPUT")
     print("=" * 60)
 
     if not structured_output:
@@ -59,7 +59,7 @@ def main():
         print(f"Frequency  : {med.get('frequency', 'N/A')}")
         print(f"Duration   : {med.get('duration', 'N/A')}")
 
-    print("\n✅ Processing Completed.\n")
+    print("\nProcessing Completed.\n")
 
 
 if __name__ == "__main__":
