@@ -1,54 +1,114 @@
-🔹 Handwritten Prescription Recognition
-📌 Overview
+Handwritten Prescription Recognition System
+Overview:
 
-This project extracts medicine names and dosage information from handwritten prescription images using OCR and intelligent post-processing.
+This project presents a modular pipeline for extracting medicine names and dosage information from handwritten prescription images using Optical Character Recognition (OCR) combined with intelligent post-processing techniques.
 
-🛠 Tech Stack
+The system is designed as a confidence-aware assistive tool, helping identify medicines from handwritten prescriptions while incorporating safety through threshold-based validation and structured output generation.
+
+Tech Stack:
 
 Python
 
-OpenCV
+OpenCV – Image preprocessing
 
-EasyOCR
+EasyOCR – Handwritten text extraction
 
-RapidFuzz (Fuzzy Matching)
+RapidFuzz – Fuzzy string matching
 
-🧠 Approach
+Regex-based Parsing – Dosage extraction
 
-Image preprocessing (resize, denoise, contrast enhancement)
+System Architecture:
+Input Prescription Image
+        ↓
+Image Preprocessing
+        ↓
+OCR Extraction (EasyOCR)
+        ↓
+Text Cleaning & Filtering
+        ↓
+Fuzzy Matching with Medicine Database
+        ↓
+Confidence Scoring & Threshold Logic
+        ↓
+Structured Output Generation
+Approach:
 
-OCR extraction using EasyOCR
+Image Preprocessing
 
-Text cleaning and candidate filtering
+Resizing
 
-Fuzzy matching against a medicine database
+Noise reduction
 
-Threshold filtering (75%)
+Contrast enhancement
 
-Structured output generation
+OCR Extraction
 
-📊 Features
+Text detection using EasyOCR
 
-Confidence score for each detected medicine
+Raw text generation
+
+Post-Processing
+
+Text normalization
+
+Candidate filtering
+
+Duplicate removal
+
+Medicine Matching
+
+Fuzzy matching against predefined medicine database
+
+Threshold filtering (≥ 75%)
+
+Confidence-Based Decision Layer
+
+≥ 85% → Auto-Verified
+
+70–85% → Review Recommended
+
+< 70% → Manual Verification Required
+
+Features:
+
+Structured terminal output
+
+Confidence score for detected medicines
 
 Duplicate removal
 
 Basic dosage extraction
 
-Clean structured terminal output
+CLI-based execution
 
-🚧 Challenges
+Modular code design for future extensions
 
-Noisy OCR due to doctor handwriting
+Limitations:
 
-Spelling distortions
+Performance depends on OCR quality.
 
-False positives control
+Highly cursive or extremely complex doctor handwriting may reduce accuracy.
 
-🚀 Future Improvements
+Designed as an assistive system; human verification is recommended for low-confidence outputs.
 
-Transformer-based OCR (TrOCR)
+Key Challenges:
 
-Better segmentation
+Noisy OCR results due to doctor handwriting
 
-Deep learning fine-tuning
+Spelling distortions and abbreviations
+
+Controlling false positives during fuzzy matching
+
+Handling overlapping or unclear text regions
+
+Future Improvements:
+
+Integration of Transformer-based OCR models (e.g., TrOCR)
+
+Improved word-level segmentation
+
+Context-aware correction using language models
+
+Evaluation on larger annotated datasets
+
+Web-based deployment (Streamlit/Flask interface)
