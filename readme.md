@@ -1,4 +1,4 @@
-Handwritten Prescription Recognition System
+**Handwritten Prescription Recognition System**
 Overview:
 
 This project presents a modular pipeline for extracting medicine names and dosage information from handwritten prescription images using Optical Character Recognition (OCR) combined with intelligent post-processing techniques.
